@@ -1,4 +1,4 @@
-call CalculaDiaUtilAnterior("28/02/2022")
+'call CalculaDiaUtilAnterior("28/02/2022") ' simula data
 
 Function CalculaDiaUtilAnterior(var)
 
@@ -30,7 +30,7 @@ end if
         CalculaDiaUtilAnterior = res
 
     Else
-    		'msgbox(data)
-			CalculaDiaUtilAnterior = data
+    	'msgbox(data)
+	CalculaDiaUtilAnterior = data
 	end if
 End Function
