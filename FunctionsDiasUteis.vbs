@@ -34,3 +34,30 @@ end if
 	CalculaDiaUtilAnterior = data
 	end if
 End Function
+
+Function isDiaUtil(var)
+
+	On Error Resume Next
+
+	arrayDS = array("Domingo","Segunda-Feira","Terça-Feira","Quarta-Feira","Quinta-Feira","Sexta-Feira","Sábado")
+	dataInput = CDate(var)
+	if(weekday(dataInput) = 1)then
+		diadasemana = "Domingo"
+	else
+		diadasemana = arrayDS(weekday(dataInput-1))
+	end if
+if(diadasemana ="Sábado" OR diadasemana ="Domingo")then
+	isDiaUtil = 0
+else
+	isDiaUtil = 1
+end if
+
+    If Err.Number <> 0 Then
+
+        Dim res
+
+        res = "ERRO, número do erro:" & CStr(Err.Number) & ", Descrição do erro:" & CStr(Err.Description)
+
+        isDiaUtil = res
+	end if
+End Function
