@@ -61,3 +61,28 @@ end if
         isDiaUtil = res
 	end if
 End Function
+
+Function isMonday(var)
+
+	On Error Resume Next
+
+	arrayDS = array("Domingo","Segunda-Feira","TerÃ§a-Feira","Quarta-Feira","Quinta-Feira","Sexta-Feira","SÃ¡bado")
+	dataInput = CDate(var)
+	if(weekday(dataInput) = 1)then
+		diadasemana = "Domingo"
+	else
+		diadasemana = arrayDS(weekday(dataInput-1))
+	end if
+if(diadasemana ="Segunda-Feira")then
+	isMonday = 1
+else
+	isMonday = 0
+end if
+
+    If Err.Number <> 0 Then
+        Dim res
+        res = "ERRO, nÃºmero do erro:" & CStr(Err.Number) & ", DescriÃ§Ã£o do erro:" & CStr(Err.Description)
+        isMonday = res
+	end if
+	msgbox(isMonday)
+End Function
