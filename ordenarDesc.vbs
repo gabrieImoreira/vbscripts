@@ -4,49 +4,49 @@ Sub Macro1(var)
 '
 '
 With ActiveSheet.QueryTables.Add(Connection:= _
- "TEXT;" & var _
- , Destination:=Range("$A$1"))
- .CommandType = 0
- .Name = "New Microsoft Excel Worksheet"
- .FieldNames = True
- .RowNumbers = False
- .FillAdjacentFormulas = False
- .PreserveFormatting = True
- .RefreshOnFileOpen = False
- .RefreshStyle = xlInsertDeleteCells
- .SavePassword = False
- .SaveData = True
- .AdjustColumnWidth = True
- .RefreshPeriod = 0
- .TextFilePromptOnRefresh = False
- .TextFilePlatform = 850
- .TextFileStartRow = 1
- .TextFileParseType = xlDelimited
- .TextFileTextQualifier = xlTextQualifierDoubleQuote
- .TextFileConsecutiveDelimiter = False
- .TextFileTabDelimiter = False
- .TextFileSemicolonDelimiter = False
- .TextFileCommaDelimiter = True
- .TextFileSpaceDelimiter = False
- .TextFileColumnDataTypes = Array(2, 2, 2)
- .TextFileTrailingMinusNumbers = True
- .Refresh BackgroundQuery:=False
+  "TEXT;" & var _
+  , Destination:=Range("$A$1"))
+  .CommandType = 0
+  .Name = "New Microsoft Excel Worksheet"
+  .FieldNames = True
+  .RowNumbers = False
+  .FillAdjacentFormulas = False
+  .PreserveFormatting = True
+  .RefreshOnFileOpen = False
+  .RefreshStyle = xlInsertDeleteCells
+  .SavePassword = False
+  .SaveData = True
+  .AdjustColumnWidth = True
+  .RefreshPeriod = 0
+  .TextFilePromptOnRefresh = False
+  .TextFilePlatform = 850
+  .TextFileStartRow = 1
+  .TextFileParseType = xlDelimited
+  .TextFileTextQualifier = xlTextQualifierDoubleQuote
+  .TextFileConsecutiveDelimiter = False
+  .TextFileTabDelimiter = False
+  .TextFileSemicolonDelimiter = False
+  .TextFileCommaDelimiter = True
+  .TextFileSpaceDelimiter = False
+  .TextFileColumnDataTypes = Array(2, 2, 2)
+  .TextFileTrailingMinusNumbers = True
+  .Refresh BackgroundQuery:=False
 End With
-Selection.AutoFilter
-ActiveWorkbook.Worksheets("Planilha1").AutoFilter.Sort.SortFields.Clear
-ActiveWorkbook.Worksheets("Planilha1").AutoFilter.Sort.SortFields.Add Key:= _
-Range("A1:A553"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption _
-:=xlSortNormal
+  Selection.AutoFilter
+  ActiveWorkbook.Worksheets("Planilha1").AutoFilter.Sort.SortFields.Clear
+  ActiveWorkbook.Worksheets("Planilha1").AutoFilter.Sort.SortFields.Add Key:= _
+  Range("A1:A553"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption _
+  :=xlSortNormal
 With ActiveWorkbook.Worksheets("Planilha1").AutoFilter.Sort
-.Header = xlYes
-.MatchCase = False
-.Orientation = xlTopToBottom
-.SortMethod = xlPinYin
-.Apply
+  .Header = xlYes
+  .MatchCase = False
+  .Orientation = xlTopToBottom
+  .SortMethod = xlPinYin
+  .Apply
 End With
-ActiveWorkbook.SaveAs Filename:= _
-var & "1", FileFormat:=xlCSV _
-, CreateBackup:=False
+  ActiveWorkbook.SaveAs Filename:= _
+  var & "1", FileFormat:=xlCSV _
+  , CreateBackup:=False
 End Sub
 
  
