@@ -2,9 +2,6 @@ Sub Macro1(var)
 '
 ' Macro1 Macro
 '
-
- 
-
 '
 With ActiveSheet.QueryTables.Add(Connection:= _
 "TEXT;" & var _
