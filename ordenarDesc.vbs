@@ -116,3 +116,23 @@ Function CSVparaASC(x)
   xlapp.Quit
 
 end Function
+
+
+ Sub OrdenarValor()
+'
+' OrdenarValor Macro
+'
+
+'
+    ActiveWorkbook.Worksheets("Pronto").AutoFilter.Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("Pronto").AutoFilter.Sort.SortFields.Add2 Key:= _
+        Range("C2:C4500"), SortOn:=xlSortOnValues, Order:=xlDescending, DataOption _
+        :=xlSortNormal
+    With ActiveWorkbook.Worksheets("Pronto").AutoFilter.Sort
+        .Header = xlYes
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+End Sub
