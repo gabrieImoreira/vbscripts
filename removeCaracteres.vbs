@@ -127,3 +127,21 @@ Function TiraAcento(Palavra)
         SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
         ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
 End Sub
+
+  Sub Retirada60Menos()
+'
+' Retirada60Menos Macro
+'
+
+'
+    ActiveSheet.Range("$A$2:$L$4500").AutoFilter Field:=3, Criteria1:="<60", _
+        Operator:=xlAnd
+    Range("A3").Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.EntireRow.Delete
+    ActiveWorkbook.Worksheets("Pronto").AutoFilter.Sort.SortFields.Clear
+    ActiveSheet.ShowAllData
+End Sub
+  
